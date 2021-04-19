@@ -1,7 +1,8 @@
+
 # Lógica de negocios para DogsDirectory
 En base a esta lógica construiremos el primer ejemplo con windows forms
 
 
 
-![paquetes](https://user-images.githubusercontent.com/613488/115238573-37966680-a0f4-11eb-80f4-8f4d911b53e4.png)
+![paquetes](https://user-images.githubusercontent.com/613488/115264352-9a93f780-a10c-11eb-9161-ed5b2b1f2517.png)
 
