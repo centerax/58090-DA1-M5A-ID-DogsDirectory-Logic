@@ -1,7 +1,4 @@
-# Lógica de negocios para DogsDirectory
-En base a esta lógica construiremos el primer ejemplo con windows forms
+# Diagrama de clases para la lógica de negocios
 
-
-
-![paquetes](https://user-images.githubusercontent.com/613488/115238573-37966680-a0f4-11eb-80f4-8f4d911b53e4.png)
+![Clases](https://user-images.githubusercontent.com/613488/115264812-04ac9c80-a10d-11eb-8cad-8873693cc222.png)
 
