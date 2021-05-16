@@ -13,8 +13,8 @@ namespace UserInterface
 {
     public partial class AddDogOwner : UserControl
     {
-        private DogsDirectory directory;
-        public AddDogOwner(DogsDirectory aDirectory)
+        private DogsDirectorySqlServer directory;
+        public AddDogOwner(DogsDirectorySqlServer aDirectory)
         {
             InitializeComponent();
             directory = aDirectory;

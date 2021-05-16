@@ -9,6 +9,10 @@ namespace Domain
 {
     public class Dog
     {
+        public DogOwner Owner { get; set; }
+
+        public int Id { get; set; }
+
         public enum BreedSize { XSmall, Small, Medium, Large, XLarge };
 
         private const int MaxNameLength = 10;
