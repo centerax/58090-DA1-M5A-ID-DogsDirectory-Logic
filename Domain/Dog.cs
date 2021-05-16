@@ -40,13 +40,66 @@ namespace Domain
 
         public override string ToString()
         {
-            string size = "";
-            if (this.Size == Dog.BreedSize.Medium)
+            string size = TranslateDogSize();
+
+            return $"{this.Name} de raza: {this.Breed} y tamaño: {size}.";
+        }
+
+        private string TranslateDogSize()
+        {
+            var size = string.Empty;
+
+            if (IsDogMedium())
             {
                 size = "Mediano";
             }
 
-            return $"{this.Name} de raza: {this.Breed} y tamaño: {size}.";
+            if (IsDogSuperSmall())
+            {
+                size = "Miniatura";
+            }
+
+            if (IsDogSMall())
+            {
+                size = "Pequeño";
+            }
+
+            if (IsDogLarge())
+            {
+                size = "Grande";
+            }
+
+            if (IsDogEnormous())
+            {
+                size = "Gigante";
+            }
+
+            return size;
+        }
+
+        private bool IsDogEnormous()
+        {
+            return this.Size == Dog.BreedSize.XLarge;
+        }
+
+        private bool IsDogLarge()
+        {
+            return this.Size == Dog.BreedSize.Large;
+        }
+
+        private bool IsDogSMall()
+        {
+            return this.Size == Dog.BreedSize.Small;
+        }
+
+        private bool IsDogSuperSmall()
+        {
+            return this.Size == Dog.BreedSize.XSmall;
+        }
+
+        private bool IsDogMedium()
+        {
+            return this.Size == Dog.BreedSize.Medium;
         }
     }
 }
