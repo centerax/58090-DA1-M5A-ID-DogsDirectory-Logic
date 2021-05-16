@@ -15,26 +15,36 @@ namespace Tests
         [TestMethod]
         public void DogHasProperties()
         {
-            CreateSharPeiDog();
+            CreateSharPeiMedium(Dog.BreedSize.Medium);
         }
 
-        private Dog CreateSharPeiDog()
+        private Dog CreateSharPeiMedium(Dog.BreedSize aSize)
         {
             Dog dog = new Dog();
             dog.Name = "Beto";
             dog.Breed = "Shar-Pei";
-            dog.Size = Dog.BreedSize.Medium;
+            dog.Size = aSize;
 
             return dog;
         }
 
         [TestMethod]
-        public void DogToStringFormat()
+        [DataRow(Dog.BreedSize.Medium, "Mediano")]
+        [DataRow(Dog.BreedSize.Small, "Pequeño")]
+        [DataRow(Dog.BreedSize.XSmall, "Miniatura")]
+        [DataRow(Dog.BreedSize.Large, "Grande")]
+        [DataRow(Dog.BreedSize.XLarge, "Gigante")]
+        public void DogToStringFormat(Dog.BreedSize aSize, string expectedSize)
         {
-            var dog = CreateSharPeiDog();
+            var dog = CreateSharPeiMedium(aSize);
 
-            Assert.AreEqual("Beto de raza: Shar-Pei y tamaño: Mediano.", dog.ToString());
+            Assert.AreEqual(
+                "Beto de raza: Shar-Pei y tamaño: " + expectedSize + ".",
+                dog.ToString()
+            );
         }
+
+
 
         [TestMethod]
         [ExpectedException(typeof(NameTooLongException))]
