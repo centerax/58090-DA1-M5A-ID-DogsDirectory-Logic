@@ -13,9 +13,9 @@ namespace UserInterface
 {
     public partial class ListDogsAndOwners : UserControl
     {
-        private DogsDirectory directory;
+        private DogsDirectorySqlServer directory;
 
-        public ListDogsAndOwners(DogsDirectory aDirectory)
+        public ListDogsAndOwners(DogsDirectorySqlServer aDirectory)
         {
             InitializeComponent();
             directory = aDirectory;
@@ -30,7 +30,8 @@ namespace UserInterface
 
             if (selectedOwner != null)
             {
-                lstboxDogs.DataSource = selectedOwner.Dogs();
+                lstboxDogs.DataSource = null;
+                lstboxDogs.DataSource = directory.DogsForOwner(selectedOwner);
             }
         }
 

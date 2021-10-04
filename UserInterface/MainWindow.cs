@@ -13,12 +13,12 @@ namespace UserInterface
 {
     public partial class MainWindow : Form
     {
-        public DogsDirectory DogsAndOwners { get; private set; }
+        public DogsDirectorySqlServer DogsAndOwners { get; private set; }
 
         public MainWindow()
         {
             InitializeComponent();
-            DogsAndOwners = new DogsDirectory();
+            DogsAndOwners = new DogsDirectorySqlServer();
             LoadAddDogOwnerUserControl();
         }
 
